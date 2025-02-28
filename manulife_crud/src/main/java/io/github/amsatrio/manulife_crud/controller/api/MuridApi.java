@@ -50,6 +50,8 @@ public class MuridApi {
             return ResponseEntity.status(400).body(globalResponse);
         }
 
+        murid.setTimeCreate(new Date());
+
         globalResponse.setData(muridRepository.save(murid));
         return ResponseEntity.status(201).body(globalResponse);
     }

@@ -52,6 +52,8 @@ public class PendidikanApi {
             return ResponseEntity.status(400).body(globalResponse);
         }
 
+        pendidikan.setTimeCreate(new Date());
+
         globalResponse.setData(pendidikanRepository.save(pendidikan));
         return ResponseEntity.status(201).body(globalResponse);
     }
